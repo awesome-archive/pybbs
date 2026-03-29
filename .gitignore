@@ -27,3 +27,6 @@ data/
 .settings/
 logs/
 .vscode/
+mysql
+static/upload/
+.sass-cache/

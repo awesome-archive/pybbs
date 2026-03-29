@@ -4,63 +4,69 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by tomoya.
  * Copyright (c) 2018, All Rights Reserved.
- * https://yiiu.co
+ * https://atjiu.github.io
  */
 public class Tag implements Serializable {
-  private static final long serialVersionUID = 3257790983905872243L;
-  @TableId(type = IdType.AUTO)
-  private Integer id;
-  private String name;
-  private String description;
-  private String icon;
-  // 当前标签下的话题个数
-  private Integer topicCount;
+    private static final long serialVersionUID = 3257790983905872243L;
+    @TableId(type = IdType.AUTO)
+    private Integer id;
+    private String name;
+    private String description;
+    private String icon;
+    // 当前标签下的话题个数
+    private Integer topicCount;
+    private Date inTime;
 
-  public static long getSerialVersionUID() {
-    return serialVersionUID;
-  }
+    public Date getInTime() {
+        return inTime;
+    }
 
-  public Integer getId() {
-    return id;
-  }
+    public void setInTime(Date inTime) {
+        this.inTime = inTime;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public Integer getId() {
+        return id;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public String getDescription() {
-    return description;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
+    public String getDescription() {
+        return description;
+    }
 
-  public String getIcon() {
-    return icon;
-  }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-  public void setIcon(String icon) {
-    this.icon = icon;
-  }
+    public String getIcon() {
+        return icon;
+    }
 
-  public Integer getTopicCount() {
-    return topicCount;
-  }
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
-  public void setTopicCount(Integer topicCount) {
-    this.topicCount = topicCount;
-  }
+    public Integer getTopicCount() {
+        return topicCount;
+    }
+
+    public void setTopicCount(Integer topicCount) {
+        this.topicCount = topicCount;
+    }
 }

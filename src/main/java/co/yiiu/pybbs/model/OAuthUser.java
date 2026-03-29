@@ -12,106 +12,129 @@ import java.util.Date;
 /**
  * Created by tomoya.
  * Copyright (c) 2018, All Rights Reserved.
- * https://yiiu.co
+ * https://atjiu.github.io
  */
 @TableName("oauth_user")
 public class OAuthUser implements Serializable {
 
-  @TableId(type = IdType.AUTO)
-  private Integer id;
+    @TableId(type = IdType.AUTO)
+    private Integer id;
+    // oauth帐号的id
+    private Integer oauthId;
+    // 帐号类型，GITHUB, QQ, WECHAT, WEIBO 等
+    @TableField("`type`")
+    private String type;
+    // oauth帐号的登录名
+    private String login;
+    @JsonIgnore
+    private String accessToken;
+    private Date inTime;
+    // 个人简介
+    private String bio;
+    private String email;
+    // 本地用户的id
+    private Integer userId;
+    // 刷新token
+    private String refreshToken;
+    // 只微信里有这个字段，联合登录id
+    private String unionId;
+    // token过期时间，这里用的是String来存的，用时转换一下即可
+    // 为啥要用String，因为String可以很方便的转其它类型..
+    private String expiresIn;
 
-  // oauth帐号的id
-  private Integer oauthId;
+    public Integer getId() {
+        return id;
+    }
 
-  // 帐号类型，GITHUB, QQ, WECHAT, WEIBO 等
-  @TableField("`type`")
-  private String type;
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-  // oauth帐号的登录名
-  private String login;
+    public Integer getOauthId() {
+        return oauthId;
+    }
 
-  @JsonIgnore
-  private String accessToken;
+    public void setOauthId(Integer oauthId) {
+        this.oauthId = oauthId;
+    }
 
-  private Date inTime;
+    public String getType() {
+        return type;
+    }
 
-  // 个人简介
-  private String bio;
+    public void setType(String type) {
+        this.type = type;
+    }
 
-  private String email;
+    public String getLogin() {
+        return login;
+    }
 
-  // 本地用户的id
-  private Integer userId;
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
-  public Integer getId() {
-    return id;
-  }
+    public String getAccessToken() {
+        return accessToken;
+    }
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
 
-  public Integer getOauthId() {
-    return oauthId;
-  }
+    public Date getInTime() {
+        return inTime;
+    }
 
-  public void setOauthId(Integer oauthId) {
-    this.oauthId = oauthId;
-  }
+    public void setInTime(Date inTime) {
+        this.inTime = inTime;
+    }
 
-  public String getType() {
-    return type;
-  }
+    public String getBio() {
+        return bio;
+    }
 
-  public void setType(String type) {
-    this.type = type;
-  }
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
-  public String getLogin() {
-    return login;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public void setLogin(String login) {
-    this.login = login;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public String getAccessToken() {
-    return accessToken;
-  }
+    public Integer getUserId() {
+        return userId;
+    }
 
-  public void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
-  }
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-  public Date getInTime() {
-    return inTime;
-  }
+    public String getRefreshToken() {
+        return refreshToken;
+    }
 
-  public void setInTime(Date inTime) {
-    this.inTime = inTime;
-  }
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
 
-  public String getBio() {
-    return bio;
-  }
+    public String getUnionId() {
+        return unionId;
+    }
 
-  public void setBio(String bio) {
-    this.bio = bio;
-  }
+    public void setUnionId(String unionId) {
+        this.unionId = unionId;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getExpiresIn() {
+        return expiresIn;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public Integer getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Integer userId) {
-    this.userId = userId;
-  }
+    public void setExpiresIn(String expiresIn) {
+        this.expiresIn = expiresIn;
+    }
 }
